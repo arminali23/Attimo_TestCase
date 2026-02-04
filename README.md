@@ -16,9 +16,23 @@ Users upload documents via Streamlit, the system indexes them with embeddings in
 - LLM integration with fallback (retrieval-only if quota unavailable)
 - Basic logging and error handling
 
-## Setup
+### Measured Performance (local machine)
 
-### Create a virtual environment
+Using a single academic PDF (~26 pages, ~100+ chunks):
+
+- Ingestion (indexing): ~3 seconds (one-time cost)
+- Retrieval + answer: ~3.2 seconds average
+- End-to-end inference (Ask → Answer): consistently under 5 seconds
+
+Performance was achieved by:
+- Using fast local embeddings (fastembed)
+- Limiting retrieval to the top 3 chunks
+- Keeping context size bounded
+- Avoiding re-ingestion on every query
+
+### Setup
+
+Create a virtual environment
 
 ```bash
 python -m venv .venv
