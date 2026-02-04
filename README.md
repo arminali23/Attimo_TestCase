@@ -5,6 +5,17 @@ Users upload documents via Streamlit, the system indexes them with embeddings in
 
 ---
 
+## Features
+
+- Upload documents (pdf/txt/md)
+- Ingestion status + loaded document list
+- Chunking + embeddings + similarity search (ChromaDB)
+- Question answering with sources (file + chunk id + snippet)
+- Reset / re-upload support
+- Local fast embeddings for performance
+- LLM integration with fallback (retrieval-only if quota unavailable)
+- Basic logging and error handling
+
 ## Setup
 
 ### Create a virtual environment
