@@ -1,0 +1,7 @@
+streamlit
+chromadb
+openai
+pypdf
+python-dotenv
+tiktoken
+fastembed
